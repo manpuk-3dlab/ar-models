@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AR確認ページ</title>
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+  body { margin: 0; font-family: system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif; background: #f4f4f1; color: #1f2a33; }
+  main { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  p { margin: 0 0 16px; color: #5d6872; font-size: 14px; }
+  .item { background: #fff; border: 1px solid #d5d9db; margin-bottom: 24px; }
+  model-viewer { width: 100%; height: 420px; background: #eceeed; }
+  .info { padding: 12px 16px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .info b { font-size: 16px; }
+  .info span { font-family: ui-monospace, monospace; color: #5d6872; }
+  .ar-btn { position: absolute; right: 12px; bottom: 12px; padding: 10px 18px; border: 0; background: #1f2a33; color: #fff; font-size: 15px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>AR確認ページ</h1>
+  <p>スマホで開き、「部屋に置く」を押すと実寸大で表示されます。大きさは固定(拡大縮小不可)にしてあります。</p>
+
+  <!-- 1点ごとに、この div.item をコピーして src と名前・寸法を書き換えます -->
+  <div class="item">
+    <model-viewer
+      src="stool_01A.glb"
+      alt="角スツール 01-A"
+      ar
+      ar-modes="scene-viewer webxr"
+      ar-scale="fixed"
+      ar-placement="floor"
+      camera-controls
+      auto-rotate
+      shadow-intensity="1">
+      <button slot="ar-button" class="ar-btn">部屋に置く</button>
+    </model-viewer>
+    <div class="info"><b>01-A 角スツール</b><span>W360 D360 H450</span></div>
+  </div>
+</main>
+</body>
+</html>
