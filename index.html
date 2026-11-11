@@ -23,7 +23,7 @@
   <h1>AR確認ページ</h1>
   <p>スマホで開き、「部屋に置く」を押すと実寸大で表示されます。大きさは固定(拡大縮小不可)にしてあります。</p>
 
-  <!-- 1点ごとに、この div.item をコピーして src と名前・寸法を書き換えます -->
+  <!-- 1点目:角スツール -->
   <div class="item">
     <model-viewer
       src="stool_01A.glb"
@@ -38,6 +38,23 @@
       <button slot="ar-button" class="ar-btn">部屋に置く</button>
     </model-viewer>
     <div class="info"><b>01-A 角スツール</b><span>W360 D360 H450</span></div>
+  </div>
+
+  <!-- 2点目:丸サイドテーブル -->
+  <div class="item">
+    <model-viewer
+      src="table_01B.glb"
+      alt="丸サイドテーブル 01-B"
+      ar
+      ar-modes="scene-viewer webxr"
+      ar-scale="fixed"
+      ar-placement="floor"
+      camera-controls
+      auto-rotate
+      shadow-intensity="1">
+      <button slot="ar-button" class="ar-btn">部屋に置く</button>
+    </model-viewer>
+    <div class="info"><b>01-B 丸サイドテーブル</b><span>φ450 H550</span></div>
   </div>
 </main>
 </body>
